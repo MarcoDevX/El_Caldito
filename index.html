@@ -1,11 +1,513 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Caldito de Abuela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="buela.jpg" type="image/jpeg">
+
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <div class="nav-logo">
+      <img src="buela.jpg" alt="Logo">
+      <span>El Caldito de Abuela</span>
+    </div>
+    <div class="nav-links">
+      <a href="#menu">Menú</a>
+      <a href="#gallery">Galería</a>
+      <a href="#editorial">Nuestra Historia</a>
+      <a href="#location">Ubicación</a>
+    </div>
+    <button class="hamburger" id="hamburger">☰</button>
+    <button class="theme-pill" id="theme-btn">🌙</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#menu">Menú</a>
+  <a href="#gallery">Galería</a>
+  <a href="#editorial">Nuestra Historia</a>
+  <a href="#location">Ubicación</a>
+  <hr>
+  <a href="tel:+18492592830">Llamar</a>
+  <a href="https://wa.me/18492592830" target="_blank">WhatsApp</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span></span> TRADICIÓN & SABOR <span></span>
+    </div>
+    <h1>El <em>Caldito</em> de Abuela</h1>
+    <p class="hero-sub">Recetas auténticas dominicanas preparadas con amor desde el corazón</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="scrollTo('#menu')">Ver Menú</button>
+      <button class="btn-ghost" onclick="window.location.href='tel:+18492592830'">Llamar Ahora</button>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    Desplázate
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     MENU SECTION
+═══════════════════════════════════════════════ -->
+<section class="menu-section reveal" id="menu">
+  <div class="sec-header">
+    <h2>Nuestro Menú</h2>
+    <p>Cada plato preparado con ingredientes frescos y recetas auténticas de la abuela</p>
+  </div>
+  <div class="cat-bar" id="cat-bar"></div>
+  <div id="dishes-grid"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     GALLERY SECTION
+═══════════════════════════════════════════════ -->
+<section class="gallery-section reveal" id="gallery">
+  <div class="sec-header">
+    <h2>📸 Galería de Fotos</h2>
+    <p>Momentos especiales en nuestro restaurante</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=500&fit=crop" alt="Plato principal">
+      <div class="gallery-overlay">🍖</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop" alt="Ambiente restaurante">
+      <div class="gallery-overlay">✨</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop" alt="Entrada">
+      <div class="gallery-overlay">🥘</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1559339352-11d3b0ab9c7d?w=500&h=500&fit=crop" alt="Postre">
+      <div class="gallery-overlay">🍴</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1514432324607-2e467f4af445?w=500&h=500&fit=crop" alt="Bebidas">
+      <div class="gallery-overlay">🍷</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop" alt="Banquetes">
+      <div class="gallery-overlay">👨‍👩‍👧‍👦</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     EDITORIAL SECTION
+═══════════════════════════════════════════════ -->
+<section class="editorial-section reveal" id="editorial">
+  <div class="sec-header" style="margin-bottom:3rem">
+    <h2>🎬 Nuestra Historia</h2>
+  </div>
+  <div class="editorial-container">
+    <div class="editorial-image">
+      <img src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600&h=400&fit=crop" alt="Nuestra cocina">
+    </div>
+    <div class="editorial-content">
+      <h2>De Abuela al Mundo</h2>
+      <p>
+        Nuestro restaurante nace de una tradición familiar que ha pasado de generación en generación. Las recetas que preparamos hoy son las mismas que nuestra abuela cocinaba en su modesta cocina hace más de 40 años.
+      </p>
+      <div class="editorial-highlight">
+        "La cocina de abuela no es solo comida, es amor expresado en cada bocado"
+      </div>
+      <p>
+        Cada ingrediente es seleccionado cuidadosamente, cada técnica perfeccionada a lo largo de los años. Lo que comenzó como una pequeña comida familiar se ha transformado en un movimiento culinario que honra nuestras raíces dominicanas.
+      </p>
+      <p style="margin-bottom:0">
+        En El Caldito de Abuela, no solo comes un plato, formas parte de nuestra familia. Cada visita es una celebración de nuestra herencia, sabor y tradición.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     LOCATION SECTION
+═══════════════════════════════════════════════ -->
+<section class="location-section reveal" id="location">
+  <div class="sec-header">
+    <h2>📍 Visítanos</h2>
+    <p>¡Ven a probar la auténtica cocina de abuela!</p>
+  </div>
+  <div class="location-grid">
+    <div class="location-info">
+      <h3>Información de Contacto</h3>
+      
+      <div class="location-detail">
+        <strong>📍 Dirección</strong>
+        <p>San Juan de la Maguana<br>Región Enriquillo, República Dominicana</p>
+      </div>
+      
+      <div class="location-detail">
+        <strong>📱 Teléfono</strong>
+        <p><a href="tel:+18492592830">+1 (849) 259-2830</a></p>
+      </div>
+      
+      <div class="location-detail">
+        <strong>💬 WhatsApp</strong>
+        <p><a href="https://wa.me/18492592830" target="_blank">Envía mensaje directo</a></p>
+      </div>
+      
+      <div class="location-detail">
+        <strong>⏰ Horarios</strong>
+        <p>
+          Lunes - Jueves: 11:00 - 22:00<br>
+          Viernes - Sábado: 11:00 - 23:00<br>
+          Domingo: 12:00 - 21:00
+        </p>
+      </div>
+    </div>
     
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.6447484907015!2d-71.2465628!3d18.8179658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1c1c1c1c1c1c1%3A0x0!2sSan%20Juan%20de%20la%20Maguana!5e0!3m2!1ses!2sdo!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer>
+  <p>&copy; 2024 El Caldito de Abuela. Todos los derechos reservados.</p>
+  <p style="font-size:.8rem; opacity:.7; margin-top:.5rem">Hecho con ❤️ en República Dominicana</p>
+  <div class="foot-socials">
+    <a href="https://wa.me/18492592830" target="_blank" aria-label="WhatsApp">💬</a>
+    <a href="#" aria-label="Instagram">📸</a>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     WHATSAPP FLOAT
+═══════════════════════════════════════════════ -->
+<a class="wa-float" href="https://wa.me/18492592830" target="_blank" aria-label="WhatsApp">
+  💬
+</a>
+
+<!-- ═══════════════════════════════════════════════
+     JS
+═══════════════════════════════════════════════ -->
+<script>
+/* ── Menu data ── */
+const MENU = [
+  { id:1,  lec:"Lección 1",  nom:"Pa' Picar",             platos:[
+    {n:"Yuquita Frita Con Salsa De Queso",          d:null,                                       v:null,                                          e:"🍟", p:"$4.99"},
+    {n:"Dip De Aguacate",                            d:"Acompañado de pancito o casabe",           v:null,                                          e:"🥑", p:"$5.99"},
+    {n:"Montaditos De Pan Al Ajillo Con Pollo",      d:null,                                       v:null,                                          e:"🍞", p:"$6.99"},
+    {n:"Nachos Con Queso",                           d:null,                                       v:null,                                          e:"🧀", p:"$7.99"},
+    {n:"Papas Fritas Con Queso",                     d:null,                                       v:null,                                          e:"🍟", p:"$5.99"},
+    {n:"Pastel En Hoja Con Pollo",                   d:null,                                       v:"Salsa de ajo, honey mustard, queso o tradicional",e:"🫔", p:"$4.99"},
+    {n:"Palitos Mozzarella",                         d:null,                                       v:"Salsa de ajo, honey mustard o queso",         e:"🧀", p:"$5.99"},
+    {n:"Brochetas De Tostones Con Salami",           d:null,                                       v:null,                                          e:"🍢", p:"$7.99"},
+    {n:"Brocheta De Pollo Con Vegetales",            d:null,                                       v:null,                                          e:"🍢", p:"$8.99"},
+    {n:"Brocheta De Camarones Con Vegetales",        d:null,                                       v:null,                                          e:"🦐", p:"$10.99"},
+    {n:"Canastitas Con Pollo Y Queso",               d:null,                                       v:null,                                          e:"🫙", p:"$6.99"},
+    {n:"Canastitas Con Res Y Queso",                 d:null,                                       v:null,                                          e:"🫙", p:"$7.99"},
+    {n:"Canastitas Con Atún",                        d:"Sin queso",                                v:null,                                          e:"🐟", p:"$8.99"},
+    {n:"Canastitas Con Camarones",                   d:null,                                       v:"A la crema o a la criolla",                   e:"🦐", p:"$9.99"},
+    {n:"Canastitas Mixta Pollo Y Camarones",         d:null,                                       v:null,                                          e:"🫙", p:"$10.99"},
+    {n:"Canastitas Con El Chivo De Abuela",          d:"Sin queso",                                v:null,                                          e:"🐐", p:"$9.99"},
+    {n:"Canastitas Con El Chicharrón De Abuela",     d:"Sin queso",                                v:null,                                          e:"🥩", p:"$8.99"},
+  ]},
+  { id:2,  lec:"Lección 2",  nom:"Los Caldos De Abuela",  platos:[
+    {n:"Sancocho",                    d:null, v:null, e:"🍲", p:"$12.99", img:"sancocho.jpg"},
+    {n:"Mondongo",                    d:null, v:null, e:"🥘", p:"$11.99"},
+    {n:"Pipián De Chivo",              d:null, v:null, e:"🍲", p:"$13.99"},
+    {n:"Cocido Con Patica De Cerdo",   d:null, v:null, e:"🥣", p:"$12.99"},
+    {n:"Patica De Cerdo",              d:null, v:null, e:"🍖", p:"$11.99"},
+    {n:"Patimongo Con Patica De Cerdo",d:null, v:null, e:"🥣", p:"$13.99"},
+    {n:"Patimongo Con Pata De Vaca",   d:null, v:null, e:"🥣", p:"$14.99"},
+    {n:"Cocido Con Pata De Vaca",      d:null, v:null, e:"🍲", p:"$14.99"},
+    {n:"Caldo De Pata De Vaca",        d:null, v:null, e:"🫕", p:"$12.99"},
+  ]},
+  { id:3,  lec:"Lección 3",  nom:"Las Sopas De Abuela",   platos:[
+    {n:"Sopa Boba",                  d:null,                                    v:"Con o sin fideos",e:"🍜", p:"$8.99"},
+    {n:"Sopa De Vegetales",           d:null,                                    v:null,              e:"🥦", p:"$7.99"},
+    {n:"Sopa Con Pollo",              d:"Pechuga a la plancha en cubos",         v:null,              e:"🍗", p:"$9.99"},
+    {n:"Sopa Con Res",                d:null,                                    v:null,              e:"🥩", p:"$10.99"},
+    {n:"Sopa Con Pescado",            d:null,                                    v:null,              e:"🐟", p:"$10.99"},
+    {n:"Sopa Con Camarones",          d:null,                                    v:null,              e:"🦐", p:"$11.99"},
+    {n:"Sopa Con Filete De Tilapia",  d:null,                                    v:null,              e:"🐠", p:"$11.99"},
+    {n:"Sopa Con Filete De Mero",     d:null,                                    v:null,              e:"🐡", p:"$12.99"},
+    {n:"Sopa Con Mariscos",           d:null,                                    v:null,              e:"🦞", p:"$13.99"},
+  ]},
+  { id:4,  lec:"Lección 4",  nom:"Las Ensaladas",          platos:[
+    {n:"Ensalada Campesina",   d:null, v:null, e:"🥗", p:"$8.99"},
+    {n:"Ensalada De La Abuela",d:null, v:null, e:"🥗", p:"$9.99"},
+    {n:"Ensalada Con Atún",    d:null, v:null, e:"🐟", p:"$10.99"},
+    {n:"Ensalada Caprese",     d:null, v:null, e:"🍅", p:"$8.99"},
+    {n:"Ensalada Con Camarones",d:null,v:null, e:"🦐", p:"$12.99"},
+  ]},
+  { id:5,  lec:"Lección 5",  nom:"Las Pastas",             platos:[
+    {n:"La Campesina De Abuela",       d:"Pasta al estilo campesino",  v:null,                    e:"🍝", p:"$10.99"},
+    {n:"Pasta Con Camarones",           d:null,                         v:"Salsa roja o blanca",   e:"🦐", p:"$12.99"},
+    {n:"Pasta Mixta Pollo Con Bacon",   d:null,                         v:"Salsa roja o blanca",   e:"🍝", p:"$11.99"},
+    {n:"Boloñesa De Abuela",           d:null,                         v:"Salsa roja o blanca",   e:"🍝", p:"$10.99"},
+    {n:"Pasta Con Pechuga De Pollo",   d:null,                         v:"Alfredo",               e:"🍗", p:"$11.99"},
+    {n:"Pasta Con Bacon",               d:null,                         v:"Carbonara",             e:"🥓", p:"$11.99"},
+    {n:"Pasta Con Chuleta",             d:null,                         v:"Salsa roja o blanca",   e:"🥩", p:"$12.99"},
+    {n:"Tradicional En Salsa Pomodoro", d:null,                         v:null,                    e:"🍅", p:"$9.99"},
+  ]},
+  { id:6,  lec:"Lección 8",  nom:"Los Mofongos",           platos:[
+    {n:"Mofonguitos De Abuela",         d:"Triada para compartir",                        v:null,                              e:"🍌", p:"$11.99"},
+    {n:"Mofongo De Abuela",             d:null,                                            v:null,                              e:"🍌", p:"$9.99"},
+    {n:"Mofongo Con Pechuga A La Crema",d:null,                                            v:null,                              e:"🍗", p:"$11.99"},
+    {n:"Mofongo Con Pechuga Al Ajillo", d:null,                                            v:null,                              e:"🍗", p:"$11.99"},
+    {n:"Mofongo Con Chuleta",           d:null,                                            v:"A la crema o solo frita",         e:"🥩", p:"$12.99"},
+    {n:"Mofongo Bañado En Queso",       d:null,                                            v:null,                              e:"🧀", p:"$10.99"},
+    {n:"Mofongo Con Bacon",             d:null,                                            v:"A la crema, al queso o frito",    e:"🥓", p:"$11.99"},
+    {n:"Mofongo Con Camarones",         d:null,                                            v:"A la crema, al ajillo o criolla", e:"🦐", p:"$13.99"},
+    {n:"Mofongo Con Chivo De Abuela",   d:null,                                            v:"A la crema, al ajillo o criolla", e:"🐐", p:"$12.99"},
+  ]},
+  { id:7,  lec:"Lección 9",  nom:"Las Chanclas",           platos:[
+    {n:"Chancla De Abuela De Pollo",            d:"Patacón majao", v:null, e:"🥪", p:"$9.99"},
+    {n:"Chancla De Abuela De Res",              d:"Patacón majao", v:null, e:"🥪", p:"$10.99"},
+    {n:"Chancla Mixta Res Y Pollo",             d:"Patacón majao", v:null, e:"🥪", p:"$10.99"},
+    {n:"Chancla Mixta Pollo Y Bacon",           d:"Patacón majao", v:null, e:"🥓", p:"$10.99"},
+    {n:"Chancla Mixta Res Y Bacon",             d:"Patacón majao", v:null, e:"🥓", p:"$11.99"},
+  ]},
+  { id:8,  lec:"Lección 10", nom:"Las Quesadillas",        platos:[
+    {n:"Nachos Para Tres",           d:null,                                        v:null, e:"🌽", p:"$12.99"},
+    {n:"Quesadilla Solo Queso",      d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🧀", p:"$8.99"},
+    {n:"Quesadilla Con Pollo",       d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🍗", p:"$9.99"},
+    {n:"Quesadilla Con Res",         d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🥩", p:"$10.99"},
+    {n:"Quesadilla Mixta Res Y Pollo",d:"Mozzarella y cheddar con pico de gallo",  v:null, e:"🌮", p:"$11.99"},
+    {n:"Quesadilla Con Camarones",   d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🦐", p:"$12.99"},
+    {n:"Quesibirria De Chivo",       d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🐐", p:"$11.99"},
+    {n:"Quesibirria De Cerdo",       d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🐷", p:"$10.99"},
+    {n:"Quesibirria De Res",         d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🥩", p:"$11.99"},
+    {n:"Quesimixta De Birrias",      d:"Mozzarella y cheddar con pico de gallo",    v:null, e:"🌮", p:"$12.99"},
+  ]},
+  { id:9,  lec:"Lección 12", nom:"Los Tablones De Abuela", platos:[
+    {n:"Tablón Para 2 Personas", d:"Alitas, carnita, pechuga, tostones, papas, salsas variadas",                   v:null, e:"🍽️", p:"$24.99"},
+    {n:"Tablón Para 3 Personas", d:"Alitas, carnita, longaniza, pechuga, tostones, papas, batata o yuca, salsas", v:null, e:"🍽️", p:"$34.99"},
+    {n:"Tablón Para 5 Personas", d:"Alitas, carnita, longaniza, chuleta, pechuga, tostones, papas, yuca, batata, salsas", v:null, e:"🍽️", p:"$54.99"},
+  ]},
+  { id:10, lec:"Lección 13", nom:"Los Sándwiches",         platos:[
+    {n:"Club Sandwich",                 d:null, v:null, e:"🥪", p:"$9.99"},
+    {n:"Sándwich Con Pollo Y Bacon",    d:null, v:null, e:"🥓", p:"$8.99"},
+    {n:"Sándwich Huevo, Queso Y Tocino",d:null, v:null, e:"🍳", p:"$7.99"},
+    {n:"Sándwich Con Atún",             d:null, v:null, e:"🐟", p:"$8.99"},
+    {n:"Sándwich De Pollo Y Queso",     d:null, v:null, e:"🍗", p:"$8.99"},
+    {n:"Sándwich Con Salami Y Queso",   d:null, v:null, e:"🧀", p:"$7.99"},
+    {n:"Sándwich Derretido De Queso",   d:null, v:null, e:"🧀", p:"$6.99"},
+    {n:"Pan Dominicano (Con Salami)",   d:null, v:null, e:"🍞", p:"$5.99"},
+    {n:"Pan Con Aguacate",              d:null, v:null, e:"🥑", p:"$6.99"},
+    {n:"Pan Con Huevo Frito",           d:null, v:null, e:"🍳", p:"$5.99"},
+    {n:"Pan Con Chocolate",             d:null, v:null, e:"🍫", p:"$4.99"},
+  ]},
+  { id:11, lec:null,         nom:"Los Mariscos Y Pescados",platos:[
+    {n:"Filete De Mero",                   d:null, v:"Criolla, empanizado, ajillo, plancha, coco o vapor",  e:"🐟", p:"$15.99"},
+    {n:"Filete De Tilapia",                d:null, v:"Criolla, empanizado, frito, ajillo, plancha o vapor", e:"🐠", p:"$14.99"},
+    {n:"Tilapia Entera",                   d:null, v:"Guiso, ajillo, criolla, coco, plancha o vapor",      e:"🐡", p:"$16.99"},
+    {n:"Camarones",                        d:null, v:"Ajillo, crema, criolla, vinagreta, plancha o coco",   e:"🦐", p:"$17.99"},
+    {n:"El Salmón De Abuela",              d:null, v:"Al ajillo, plancha, coco o vapor",                    e:"🐙", p:"$18.99"},
+    {n:"Dúo Del Mar (Mero Con Camarones)", d:null, v:"Ajillo, criolla, plancha, coco o vapor",              e:"🦞", p:"$19.99"},
+  ]},
+  { id:12, lec:null,         nom:"Las Carnes",             platos:[
+    {n:"Las Alitas De Abuela",                        d:"10 unidades para compartir", v:"BBQ, buffalo o fritas",     e:"🍗", p:"$12.99"},
+    {n:"Chivo Guisado De Abuela",                     d:null,                         v:null,                         e:"🐐", p:"$15.99"},
+    {n:"Guinea Criolla Guisada",                      d:null,                         v:null,                         e:"🍗", p:"$13.99"},
+    {n:"Rabo Encendío De Abuela",                     d:null,                         v:null,                         e:"🥩", p:"$14.99"},
+    {n:"Bacon A La Plancha",                          d:null,                         v:null,                         e:"🥓", p:"$7.99"},
+    {n:"Pechuga En Salsa De Hongos",                  d:null,                         v:null,                         e:"🍄", p:"$12.99"},
+    {n:"Pechuga En Salsa De Queso",                   d:null,                         v:null,                         e:"🧀", p:"$12.99"},
+    {n:"Pechuga A La Crema",                          d:null,                         v:null,                         e:"🍗", p:"$11.99"},
+    {n:"Pechuga A La Plancha",                        d:null,                         v:null,                         e:"🍗", p:"$10.99"},
+    {n:"Pechuga A La Plancha Con Vegetales",          d:null,                         v:null,                         e:"🥦", p:"$11.99"},
+    {n:"Pechuga Frita",                               d:null,                         v:null,                         e:"🍗", p:"$10.99"},
+    {n:"Pechuga Empanizada",                          d:null,                         v:null,                         e:"🍗", p:"$11.99"},
+    {n:"Alitas",                                      d:null,                         v:"Buffalo, BBQ o fritas",      e:"🍗", p:"$10.99"},
+    {n:"Pechurinas De Abuela",                        d:null,                         v:null,                         e:"🍗", p:"$9.99"},
+    {n:"Carnitas De Cerdo Frita",                     d:null,                         v:null,                         e:"🥩", p:"$12.99"},
+    {n:"Longaniza Criolla Frita",                     d:null,                         v:null,                         e:"🌭", p:"$8.99"},
+    {n:"Chuleta",                                     d:null,                         v:"Buffalo, BBQ o frita",       e:"🥩", p:"$13.99"},
+  ]},
+  { id:13, lec:null,         nom:"Los Tacos — Triadas",   platos:[
+    {n:"Triada Con Pollo",             d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$9.99"},
+    {n:"Triada Con Huevos Revueltos",  d:"Con o sin vegetales, pico de gallo y guacamole",  v:null, e:"🍳", p:"$8.99"},
+    {n:"Triada Con Res",               d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$10.99"},
+    {n:"Triada Mixto Pollo Y Res",     d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$10.99"},
+    {n:"Triada Birria De Res",         d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$11.99"},
+    {n:"Triada Birria De Cerdo",       d:"Pico de gallo y guacamole",                       v:null, e:"🐷", p:"$10.99"},
+    {n:"Triada Birria De Chivo",       d:"Pico de gallo y guacamole",                       v:null, e:"🐐", p:"$11.99"},
+    {n:"Triada Con Camarones",         d:"Pico de gallo y guacamole",                       v:null, e:"🦐", p:"$12.99"},
+    {n:"Triada Mixta De Birrias",      d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$12.99"},
+  ]},
+  { id:14, lec:null,         nom:"Los Tacos — Dúos",      platos:[
+    {n:"Dúo Con Pollo",               d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$6.99"},
+    {n:"Dúo Con Huevos Revueltos",    d:"Con o sin vegetales, pico de gallo y guacamole",  v:null, e:"🍳", p:"$5.99"},
+    {n:"Dúo Con Res",                 d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$7.99"},
+    {n:"Dúo Mixto Pollo Y Res",       d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$7.99"},
+    {n:"Dúo Birria De Res",           d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$8.99"},
+    {n:"Dúo Birria De Cerdo",         d:"Pico de gallo y guacamole",                       v:null, e:"🐷", p:"$7.99"},
+    {n:"Dúo Birria De Chivo",         d:"Pico de gallo y guacamole",                       v:null, e:"🐐", p:"$8.99"},
+    {n:"Dúo Con Camarones",           d:"Pico de gallo y guacamole",                       v:null, e:"🦐", p:"$9.99"},
+    {n:"Dúo Mixta De Birrias",        d:"Pico de gallo y guacamole",                       v:null, e:"🌮", p:"$8.99"},
+  ]},
+  { id:15, lec:null,         nom:"Otros",                  platos:[
+    {n:"Los Tacos De Abuela", d:"Tres triadas para compartir con pico de gallo y guacamole", v:null, e:"🌮", p:"$21.99"},
+  ]},
+];
+
+/* ── Marquee ── */
+const items = ["Sabor Dominicano","Cocina de Abuela","San Juan de la Maguana","Tradición","Familia","Amor en Cada Bocado","Recetas Auténticas","Desde el Corazón"];
+const track = document.getElementById('marquee-track');
+const full = [...items,...items].map(t=>`<span class="marquee-item">${t}</span>`).join('');
+track.innerHTML = full + full;
+
+/* ── Menu rendering ── */
+let activeCat = 'all';
+
+function buildTabs() {
+  const bar = document.getElementById('cat-bar');
+  const allBtn = mkBtn('Todos','all',true);
+  bar.appendChild(allBtn);
+  MENU.forEach(c => {
+    const label = c.lec ? `${c.lec}` : c.nom;
+    bar.appendChild(mkBtn(label, c.id, false));
+  });
+}
+
+function mkBtn(label, id, active) {
+  const b = document.createElement('button');
+  b.className = 'cat-btn' + (active?' on':'');
+  b.textContent = label;
+  b.dataset.id = id;
+  b.addEventListener('click', () => filter(id));
+  return b;
+}
+
+function filter(id) {
+  activeCat = id;
+  document.querySelectorAll('.cat-btn').forEach(b => {
+    b.classList.toggle('on', b.dataset.id == id);
+  });
+  renderDishes();
+}
+
+function renderDishes() {
+  const grid = document.getElementById('dishes-grid');
+  grid.innerHTML = '';
+  const cats = activeCat === 'all' ? MENU : MENU.filter(c => c.id == activeCat);
+
+  cats.forEach(cat => {
+    if (activeCat === 'all') {
+      const h = document.createElement('div');
+      h.className = 'menu-cat-header';
+      h.innerHTML = (cat.lec ? `<span class="lec-badge">${cat.lec}</span>` : '') + cat.nom;
+      grid.appendChild(h);
+    }
+    cat.platos.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'dish-card';
+      const hasImg = !!p.img;
+      card.innerHTML = `
+        <div class="dish-thumb">
+          ${hasImg
+            ? `<img src="${p.img}" alt="${p.n}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\"dish-emoji-ph\\">${p.e}</div>'">`
+            : `<div class="dish-emoji-ph">${p.e}</div>`}
+        </div>
+        <div class="dish-body">
+          <h3>${p.n}</h3>
+          ${p.d ? `<p>${p.d}</p>` : ''}
+          ${p.v ? `<div class="dish-variants">↳ ${p.v}</div>` : ''}
+          <div class="dish-price">${p.p || 'Consultar precio'}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+  });
+}
+
+/* ── Navbar scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+
+/* ── Mobile menu toggle ── */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+document.querySelectorAll('.mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+});
+
+/* ── Smooth scroll ── */
+function scrollTo(sel) {
+  const el = document.querySelector(sel);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+document.querySelectorAll('[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+
+/* ── Theme ── */
+const btn = document.getElementById('theme-btn');
+const body = document.body;
+const saved = localStorage.getItem('theme');
+if(saved === 'dark') { body.classList.add('dark'); btn.textContent='☀️' }
+btn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark');
+  btn.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+/* ── Reveal on scroll ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+}, {threshold:.07});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Hero parallax subtle ── */
+const heroBg = document.querySelector('.hero-bg');
+document.querySelector('.hero').classList.add('loaded');
+window.addEventListener('scroll', () => {
+  if(window.scrollY < window.innerHeight) {
+    heroBg.style.transform = `scale(1) translateY(${window.scrollY * .25}px)`;
+  }
+},{passive:true});
+
+/* ── Init ── */
+buildTabs();
+renderDishes();
+</script>
 </body>
 </html>
