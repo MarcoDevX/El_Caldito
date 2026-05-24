@@ -1,0 +1,12 @@
+{
+  "name": "el-caldito",
+  "version": "1.0.0",
+  "description": "El Caldito de Abuela — sitio web estático",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
